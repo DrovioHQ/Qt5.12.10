@@ -195,7 +195,8 @@
 
     m_mouseMoveHelper = [[QT_MANGLE_NAMESPACE(QNSViewMouseMoveHelper) alloc] initWithView:self];
 
-    NSUInteger trackingOptions = NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate;
+    NSUInteger trackingOptions = NSTrackingActiveAlways
+  | NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate;
 
     // Ideally, NSTrackingMouseMoved should be turned on only if QWidget::mouseTracking
     // is enabled, hover is on, or a tool tip is set. Unfortunately, Qt will send "tooltip"
